@@ -78,12 +78,6 @@
                         </td>
                     </tr>
 
-                    <tr>
-                        <td style="padding:28px 40px 36px 40px;">
-                            <div style="height:1px; background:#E5E5EC; margin-bottom:24px;"></div>
-                            <p style="margin:0; font-size:13px; color:#8B8B9C; line-height:1.6;">Questions? Just reply to this email. See you at DevCon 2026.</p>
-                        </td>
-                    </tr>
                 </table>
 
                 <table role="presentation" width="600" cellpadding="0" cellspacing="0" style="width:600px; max-width:600px;">
