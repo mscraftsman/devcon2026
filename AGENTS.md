@@ -252,3 +252,14 @@ protected function isAccessible(User $user, ?string $path = null): bool
 - IMPORTANT: Activate `tailwindcss-development` every time you're working with a Tailwind CSS or styling-related task.
 
 </laravel-boost-guidelines>
+
+---
+
+## Git & Branch Protection Rules
+
+1. **Protected Default Branch (`main` / `master`)**:
+   - Direct pushes and force-pushes to the default branch are blocked by repository rulesets.
+   - **Never** push directly to `main` or `master`. Always work on a feature/fix branch and open a Pull Request (`gh pr create`).
+2. **Mandatory Commit Sign-Off (`-s` / DCO)**:
+   - Every commit **must** be signed off using `git commit -s` so that it includes a `Signed-off-by: Name <email>` trailer. Commits without this trailer are rejected by the repository ruleset.
+
