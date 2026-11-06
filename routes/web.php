@@ -124,7 +124,7 @@ Route::middleware('auth')->prefix('admin')->name('admin.')->group(function () {
     Route::get('registrations/export', [AdminRegistrationController::class, 'export'])
         ->middleware('can:export-registrations')->name('registrations.export');
     Route::get('checkin/{registration}', [AdminRegistrationController::class, 'checkIn'])->name('registrations.check-in');
-    Route::post('registrations/{registration}/cancel-check-in', [AdminRegistrationController::class, 'cancelCheckIn'])->name('registrations.cancel-check-in');
+    Route::match(['get', 'post'], 'registrations/{registration}/cancel-check-in', [AdminRegistrationController::class, 'cancelCheckIn'])->name('registrations.cancel-check-in');
 
     // Profile — any authenticated user can change their own password.
     Route::get('profile', [ProfileController::class, 'edit'])->name('profile.edit');
