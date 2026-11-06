@@ -49,7 +49,7 @@ it('checks in an attendee and queues the checked-in email', function () {
     $squad = User::factory()->squad()->create();
     $registration = Registration::factory()->notCheckedIn()->create();
 
-    $this->actingAs($squad)->post(route('admin.registrations.check-in', $registration))
+    $this->actingAs($squad)->get(route('admin.registrations.check-in', $registration))
         ->assertRedirect();
 
     expect($registration->fresh()->checked_in)->toBeTrue()
@@ -63,7 +63,7 @@ it('undoes a check-in without sending an email', function () {
     $admin = User::factory()->admin()->create();
     $registration = Registration::factory()->checkedIn()->create();
 
-    $this->actingAs($admin)->post(route('admin.registrations.cancel-check-in', $registration))
+    $this->actingAs($admin)->get(route('admin.registrations.cancel-check-in', $registration))
         ->assertRedirect();
 
     expect($registration->fresh()->checked_in)->toBeFalse()
